@@ -4,7 +4,13 @@
     justify-content: center;
     gap: 20px;
     padding: 2rem;
+    min-height: 100vh;
+    background-image: url('/images/cabinet-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     }
+    
     
     .drawer {
     width: 160px;

@@ -7,6 +7,10 @@ import Register from "./pages/Register";
 import Navbar from "./components/navbar";
 import SavedSearches from "./pages/SavedSearches";
 import CustomRecipe from "./pages/CustomRecipe";
+import { AuthProvider } from './context/AuthContext';
+import SearchHistory from './pages/SearchHistory';
+import RequireAuth from './utils/RequireAuth';
+
 import "./App.css";
 
 function App() {
@@ -24,6 +28,8 @@ function App() {
             <Route path="search" element={<HerbSearch/>}/>
             <Route path="/recipes" element={<BrowseRecipies/>}/>
             <Route path="/about" element={<AboutPage/>}/>
+            <Route path="/history" element={<>}/>
+
 
           </Routes>
           {Auth.loggedIn() && GET_HERBS.length > 0 && (
