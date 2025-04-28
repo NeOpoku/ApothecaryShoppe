@@ -7,7 +7,7 @@ import SearchFilter from "./Components/SearchFilter";
 import SearchResultsGrid from "./Components/SearchResultsGrid";
 import Footer from "./Components/Footer";
 import Login from "./pages/Login";
-import Signup from "./pages/SIgnup"; 
+import Signup from "./pages/Signup"; 
 import 'aos/dist/aos.css';
 
 
