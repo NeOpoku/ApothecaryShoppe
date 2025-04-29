@@ -1,201 +1,209 @@
+/* index.css - Custom Styling for The Apothecary Shoppe (No Tailwind) */
+
+/* Custom Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Josefin+Sans:wght@400;600&display=swap');
+
 :root {
-  --primary-green: #466d1d;
-  --accent-rose: #d8a7b1;
-  --parchment: #f9f7f4;
-  --soft-brown: #7d5a50;
+  --brand-green: #6e7747;
+  --brand-cream: #f6f1e7;
+  --accent-color: #d4c1a4;
 }
 
 body {
-  margin: 0;
-  font-family: 'M PLUS Rounded 1c', 'Montserrat', sans-serif;
-  background: url('https://thumbs.dreamstime.com/b/wood-texture-background-anime-style-wood-pattern-rpg-background-videogame-background-295339108.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: var(--soft-brown);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  overflow: hidden;
-  text-align: center;
-  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  color: #2e2e2e;
+  background-color: var(--brand-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+}
+
+.login-container, .signup-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
   padding: 2rem;
-}
-.cinzel-decorative-regular {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 400;
-  font-style: normal;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 28rem;
+  width: 100%;
 }
 
-.cinzel-decorative-bold {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.cinzel-decorative-black {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.m-plus-rounded-1c-regular {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.m-plus-rounded-1c-bold {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.montserrat-regular {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.cormorant-garamond-regular {
-  font-family: "Cormorant Garamond", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Hero Card */
-.hero {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 2;
-}
-
-/* Animated Fade-In */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 2s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Title & Subtitle */
-h1 {
-  font-size: 3rem;
-  color: var(--primary-green);
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  color: var(--soft-brown);
-  margin-bottom: 2rem;
-}
-
-/* Button with gentle floating hover */
-button {
-  background-color: var(--accent-rose);
+.button-primary {
+  background-color: var(--brand-green);
   color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
   border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 1rem;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.button-primary:hover {
+  background-color: #364520;
 }
 
-button:hover {
-  background-color: var(--primary-green);
-  transform: translateY(-4px) scale(1.05);
+.button-outline {
+  border: 1px solid var(--brand-green);
+  color: var(--brand-green);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button-outline:hover {
+  background-color: var(--brand-green);
+  color: white;
 }
 
-/* Scrolling Leaves Animation */
-.leaves {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 300%;
-  background-image: url('./assets/green-leaves.png');
-  background-repeat: repeat;
-  background-size: 300px; /* Adjust depending on how big you want the leaves */
-  opacity: 0.5;
-  pointer-events: none;
-  animation: scroll-wavy-left 100s linear infinite;
-  z-index: 0;
+.input-field {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  background-color: white;
+  outline: none;
+}
+.input-field:focus {
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 2px rgba(110, 119, 71, 0.3);
 }
 
-/* Wavy left scroll */
-@keyframes scroll-wavy-left {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-25vw, 10px); }
-  50% { transform: translate(-50vw, -10px); }
-  75% { transform: translate(-75vw, 10px); }
-  100% { transform: translate(-100vw, 0); }
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  z-index: 2;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero-section {
   text-align: center;
-  backdrop-filter: blur(6px); /* Blurs leaves behind the text */
-  background-color: rgba(255, 255, 255, 0.3); /* soft white overlay */
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: 4rem 1rem;
+  background-color: var(--brand-green);
+  color: var(--brand-cream);
 }
-
-/* Hero Text */
-.hero-text h1 {
-  font-size: 3.5rem;
-  color: var(--primary-green);
+.hero-section h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
   margin-bottom: 1rem;
 }
-
-.hero-text p {
-  font-size: 1.5rem;
-  color: var(--soft-brown);
-  margin-bottom: 2rem;
+@media (min-width: 768px) {
+  .hero-section h1 {
+    font-size: 3.75rem;
+  }
+}
+.hero-section p {
+  font-size: 1.125rem;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
-/* Button */
-button {
-  background-color: var(--accent-rose);
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+@media (min-width: 640px) {
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .section-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--brand-green);
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.card img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--brand-green);
+  padding: 1rem 1rem 0 1rem;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  padding: 0 1rem 1rem 1rem;
+  color: #4b5563;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 1rem;
+  background-color: var(--brand-green);
   color: white;
+  opacity: 0.9;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: white;
+  border: 1px solid var(--brand-green);
+  border-radius: 9999px;
+  width: 100%;
+  max-width: 48rem;
+  margin: 2rem auto;
+}
+.search-bar input {
+  flex: 1;
   border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  background: transparent;
+  color: var(--brand-green);
+  font-size: 1rem;
+  outline: none;
 }
 
-button:hover {
-  background-color: var(--primary-green);
-  transform: translateY(-4px) scale(1.05);
-}
-
-/* Fade-in animation */
-.fade-in {
-  animation: fadeIn 2s ease-out forwards;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-@keyframes fadeIn {
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Dark Mode Support */
+body.dark {
+  background-color: #1e1e1e;
+  color: var(--brand-cream);
+}
+body.dark .login-container {
+  background-color: rgba(44, 44, 44, 0.8);
+}
+body.dark .button-primary {
+  background-color: #4b5e23;
+}
+body.dark .button-primary:hover {
+  background-color: #3a4719;
+}
+body.dark .card {
+  background-color: #2a2a2a;
+  border-color: #4a4a4a;
+  color: var(--brand-cream);
 }
