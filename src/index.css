@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-family: 'M PLUS Rounded 1c', 'Montserrat', sans-serif;
-  background: url('file:///Users/monya/Downloads/Shoppe.svg') no-repeat center center fixed;
+  background: url('https://thumbs.dreamstime.com/b/wood-texture-background-anime-style-wood-pattern-rpg-background-videogame-background-295339108.jpg') no-repeat center center fixed;
   background-size: cover;
   color: var(--soft-brown);
   display: flex;
@@ -126,7 +126,7 @@ button:hover {
   background-image: url('./assets/green-leaves.png');
   background-repeat: repeat;
   background-size: 300px; /* Adjust depending on how big you want the leaves */
-  opacity: 0.2;
+  opacity: 0.5;
   pointer-events: none;
   animation: scroll-wavy-left 100s linear infinite;
   z-index: 0;
