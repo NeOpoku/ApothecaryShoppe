@@ -1,4 +1,5 @@
 node_modules
+<<<<<<< HEAD
 dist
 .env
 *.log
@@ -9,3 +10,5 @@ yarn-error.log*
 .idea/
 .vscode/
 coverage/
+=======
+>>>>>>> 03202f05 (made changes to the main)
