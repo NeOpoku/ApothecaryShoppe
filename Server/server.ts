@@ -1,6 +1,5 @@
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -12,7 +11,7 @@ import { typeDefs } from './Schema/typeDefs.js';
 import { resolvers } from './Schema/Resolvers.js';
 
 // Import middleware
-import { optionalAuthenticateToken } from './Middleware/Auth.js';
+import { authenticateToken, optionalAuthenticateToken } from './Middleware/Auth.js';
 
 // Load environment variables
 dotenv.config();
@@ -71,8 +70,8 @@ const startApolloServer = async () => {
     // Add the request to the GraphQL context
     context: ({ req }) => ({ req }),
     // Enable introspection and playground in all environments for development
-    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
-    //playground: true,
+    introspection: true,
+    playground: true,
   });
 
   // Start the Apollo server
