@@ -1,5 +1,6 @@
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
+import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -70,15 +71,15 @@ const startApolloServer = async () => {
     // Add the request to the GraphQL context
     context: ({ req }) => ({ req }),
     // Enable introspection and playground in all environments for development
-    introspection: true,
-    playground: true,
+    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+    //playground: true,
   });
 
   // Start the Apollo server
   await apolloServer.start();
   
   // Apply Apollo middleware to Express
-  apolloServer.applyMiddleware({ app });
+  apolloServer.applyMiddleware({ app: app as express.Application });
   
   // Serve static assets in production
   if (process.env.NODE_ENV === 'production') {
