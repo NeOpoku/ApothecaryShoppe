@@ -3,52 +3,26 @@
     "bcrypt": "^5.1.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.0"
+  },
+  "name": "apothecaryshoppe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npm run client:build && npm run server",
+    "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
+    "server": "cd server && npm start",
+    "server:dev": "cd server && npm run dev",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client:build": "cd client && npm run build",
+    "client:dev": "cd client && npm run dev",
+    "build": "cd server && npm run build",
+    "seed": "cd server && npm run seed",
+    "render-build": "npm install && npm run build"
   }
-}
-=======
-    "name": "apothecaryshoppe",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
-    "scripts": {
-        "start": "npm run client:build && npm run server",
-        "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
-        "server": "cd server && npm start",
-        "server:dev": "cd server && npm run dev",
-        "install": "cd server && npm i && cd ../client && npm i",
-        "client:build": "cd client && npm run build",
-        "client:dev": "cd client && npm run dev",
-        "build": "cd server && npm run build",
-        "seed": "cd server && npm run seed",
-        "render-build": "npm install && npm run build"
-    },
-    "dependencies": {
-      "@tailwindcss/vite": "^4.1.4",
-      "bcrypt": "^5.1.1",
-      "cors": "^2.8.5",
-      "dotenv": "^16.5.0",
-      "express": "^5.1.0",
-      "graphql": "^16.10.0",
-      "jsonwebtoken": "^9.0.2",
-      "jwt-decode": "^4.0.0",
-      "mongoose": "^8.13.3",
-      "pg": "^8.15.5",
-      "react": "^19.0.0",
-      "react-dom": "^19.0.0",
-      "sequelize": "^6.37.7",
-      "tailwindcss": "^4.1.4"
-    },
-    "devDependencies": {
-      "@eslint/js": "^9.22.0",
-      "@types/react": "^19.0.10",
-      "@types/react-dom": "^19.0.4",
-      "@vitejs/plugin-react": "^4.3.4",
-      "eslint": "^9.22.0",
-      "eslint-plugin-react-hooks": "^5.2.0",
-      "eslint-plugin-react-refresh": "^0.4.19",
-      "globals": "^16.0.0",
-      "typescript": "~5.7.2",
-      "typescript-eslint": "^8.26.1",
-      "vite": "^6.3.1"
-    }
 }
