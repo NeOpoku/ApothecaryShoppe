@@ -4,7 +4,7 @@ import {
   getHerbDetailsController,
   getHerbRecommendationsController,
   listHerbsController
-} from '../Controllers/herbcontroller';
+} from '../Controllers/herbController.js';
 
 const router = express.Router();
 

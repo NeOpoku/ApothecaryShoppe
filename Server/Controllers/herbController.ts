@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import Herb from '../Models/Herb';
-import { searchHerbs, getHerbDetails, getHerbRecommendations } from '../Service/openai';
+import Herb from '../Models/Herb.js';
+import { searchHerbs, getHerbDetails, getHerbRecommendations } from '../Service/openai.js';
 
 /**
  * Search for herbs using OpenAI and cached database entries
