@@ -51,6 +51,7 @@ function App() {
         </div>
       </BrowserRouter>
     </ApolloProvider>
+    </ApolloProvider>
   );
 }
 export default App;
