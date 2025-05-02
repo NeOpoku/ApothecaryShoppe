@@ -2,18 +2,21 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ApolloProvider from "../utils/ApolloProvider";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import { useState } from 'react';
+import SignupForm from './SignupForm';
+import Login from './Login';
 import Register from "./pages/Register";
 import Navbar from "./components/navbar";
 import SavedSearches from "./pages/SavedSearches";
-import CustomRecipe from "./pages/CustomRecipe";
 import { AuthProvider } from './context/AuthContext';
-import SearchHistory from './pages/SearchHistory';
+import SearchHistory from './pages/MyApothecary';
 import RequireAuth from './utils/RequireAuth';
 
 import "./App.css";
 
 function App() {
+    const [showLogin, setShowLogin] = useState(true);
+
   return (
     <ApolloProvider>
       <BrowserRouter>
@@ -22,9 +25,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/saved" element={<SavedSearches />} />
-            <Route path="create-recipe" element={<CustomRecipe />}/>
             <Route path="search" element={<HerbSearch/>}/>
             <Route path="/recipes" element={<BrowseRecipies/>}/>
             <Route path="/about" element={<AboutPage/>}/>
