@@ -12,7 +12,7 @@ import { typeDefs } from './Schema/typeDefs.js';
 import { resolvers } from './Schema/Resolvers.js';
 
 // Import middleware
-import { authenticateToken, optionalAuthenticateToken } from './Middleware/Auth.js';
+import { optionalAuthenticateToken } from './Middleware/Auth.js';
 
 // Load environment variables
 dotenv.config();

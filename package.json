@@ -21,13 +21,16 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.0.0"
   },
-    "@types/cors": "^2.8.14",
-    "@types/express": "^5.0.1",
-    "@types/jsonwebtoken": "^9.0.2",
-  "@types/node": "^20.6.3",
-  "concurrently": "^8.2.1",
-  "nodemon": "^3.0.1",
-  "ts-node": "^10.9.1",
-  "typescript": "^5.0.0"
+  "scripts": {
+    "start": "npm run client:build && npm run server",
+    "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
+    "server": "cd server && npm start",
+    "server:dev": "cd server && npm run dev",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client:build": "cd client && npm run build",
+    "client:dev": "cd client && npm run dev",
+    "build": "cd server && npm run build",
+    "seed": "cd server && npm run seed",
+    "render-build": "npm install && npm run build"
   }
 
