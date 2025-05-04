@@ -79,7 +79,7 @@ const startApolloServer = async () => {
   await apolloServer.start();
   
   // Apply Apollo middleware to Express
-  apolloServer.applyMiddleware({ app: app as express.Application });
+  apolloServer.applyMiddleware({ app });
   
   // Serve static assets in production
   if (process.env.NODE_ENV === 'production') {
