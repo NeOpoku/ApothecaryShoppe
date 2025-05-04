@@ -55,3 +55,4 @@ function App() {
 }
 export default App;
 // This code sets up a basic React application with Apollo Client for GraphQL queries and mutations. It includes routes for the home page, login, and registration, as well as a navigation bar. The application is styled with CSS and uses React Router for client-side routing.
+
