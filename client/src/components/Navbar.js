@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav>
       <Link to="/">The Apothecary Shoppe</Link>
       <Link to="login">Login</Link>
-      <Link to="register">Register</Link>
+      <Link to="Sign Up">SignUp</Link>
       {AuthenticatorAssertionResponse.loggedIn() && (
         <Link to="/saved">My Searches</Link>
       )}

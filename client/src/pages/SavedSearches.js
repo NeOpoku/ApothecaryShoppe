@@ -11,8 +11,10 @@ export default function SavedSearches() {
   const user = data?.me || {};
 
   if (!Auth.loggedIn()) {
-    return <p>Please log in to view your saved searches.</p>;
+    return <p>Please log in to view your Apothecaary.</p>;
   }
+
+  const [deleteSearch] = useMutation(DELETE_SAVED_SEARCH);
 
   return (
     <div>
