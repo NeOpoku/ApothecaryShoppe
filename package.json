@@ -12,8 +12,12 @@
     "graphql": "^16.8.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.2",
-    "openai": "^4.20.0",
-    "@types/express": "^4.17.17",
+    "openai": "^4.20.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.14",
+    "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^20.6.3",
     "concurrently": "^8.2.1",
