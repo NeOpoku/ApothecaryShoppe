@@ -12,7 +12,7 @@ import { typeDefs } from './Schema/typeDefs.js';
 import { resolvers } from './Schema/Resolvers.js';
 
 // Import middleware
-import { authenticateToken, optionalAuthenticateToken } from './Middleware/Auth.js';
+import { optionalAuthenticateToken } from './Middleware/Auth.js';
 
 // Load environment variables
 dotenv.config();
@@ -79,7 +79,7 @@ const startApolloServer = async () => {
   await apolloServer.start();
   
   // Apply Apollo middleware to Express
-  apolloServer.applyMiddleware({ app: app as express.Application });
+  apolloServer.applyMiddleware({ app });
   
   // Serve static assets in production
   if (process.env.NODE_ENV === 'production') {

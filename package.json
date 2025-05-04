@@ -17,7 +17,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.14",
-    "@types/express": "^4.17.17",
+    "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^20.6.3",
     "concurrently": "^8.2.1",
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "npm run client:build && npm run server",
-    "startdev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
+    "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
     "server": "cd server && npm start",
     "server:dev": "cd server && npm run dev",
     "install": "cd server && npm i && cd ../client && npm i",

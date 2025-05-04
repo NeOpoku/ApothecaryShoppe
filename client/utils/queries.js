@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client';
-import {gpl} from '@apollo/client';
 
 export const GET_HERBS = gql`
 query herbs($query: String!) {
