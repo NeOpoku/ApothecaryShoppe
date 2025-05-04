@@ -3,7 +3,7 @@ import SignupForm from './SignupForm';
 import Login from './Login';
 import ForgotPassword from './ForgotPassword';
 
-export default function App() {
+export default function ForgotApp() {
   const [view, setView] = useState('login');
 
   return (
