@@ -7,7 +7,26 @@ import HerbCard from '../components/HerbCard'; // Adjusted the path to match the
 const MyApothecary: React.FC = () => {
   const { state: authState } = useAuth();
   const apothecaryState = {
-    savedHerbs: [], // Replace with actual state or context logic
+    savedHerbs: [
+      {
+        id: '1',
+        name: 'Chamomile',
+        scientificName: 'Matricaria chamomilla',
+        description: 'A herb used for relaxation and sleep.',
+        uses: ['Tea', 'Essential Oil'],
+        imageUrl: 'https://example.com/chamomile.jpg',
+        benefits: ['Promotes relaxation', 'Improves sleep quality'],
+      },
+      {
+        id: '2',
+        name: 'Peppermint',
+        scientificName: 'Mentha × piperita',
+        description: 'A herb used for digestion and headaches.',
+        uses: ['Tea', 'Oil'],
+        imageUrl: 'https://example.com/peppermint.jpg',
+        benefits: ['Aids digestion', 'Relieves headaches'],
+      },
+    ], // Replace with actual state or context logic
   };
   const navigate = useNavigate();
 
@@ -34,7 +53,7 @@ const MyApothecary: React.FC = () => {
           </p>
         ) : (
           <div className="apothecary-grid">
-            {apothecaryState.savedHerbs.map((herb: { id: any; }) => (
+            {apothecaryState.savedHerbs.map((herb) => (
               <HerbCard key={herb.id} herb={herb} />
             ))}
           </div>
