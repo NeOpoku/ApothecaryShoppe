@@ -1,7 +1,27 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": ["node"],
+    "module": "esnext",
+    "target": "es2015",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "enableResourceInlining": true,
+    "strictInjectionParameters": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.html",
+    "**/*.css"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
   ]
 }
