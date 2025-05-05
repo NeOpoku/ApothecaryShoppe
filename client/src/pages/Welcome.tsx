@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import SearchResult from './SearchResult';
+import React from 'react';
 
 export default function Welcome() {
   const [query, setQuery] = useState('');
