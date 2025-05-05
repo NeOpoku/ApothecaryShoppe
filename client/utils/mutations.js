@@ -22,6 +22,15 @@ email
 }
 }
 `;
+export const SAVE_HERB = gql`
+  mutation SaveHerb($herb: HerbInput!) {
+    saveHerb(herb: $herb) {
+      savedHerbs {
+        name
+      }
+    }
+  }
+`;
 export const DELETE_SAVED_SEARCH = gql`
     mutation deleteSearch($searchId: ID!) {
     deleteSearch(searchId: $searchId) {
@@ -33,16 +42,5 @@ export const DELETE_SAVED_SEARCH = gql`
     }
     }
     `;
-export const ADD_RECIPE = gql`
-    mutation AddRecipe($name: String!, $herbs: [String]!, $instructions: String!) {
-    addRecipe(name: $name, herbs: $herbs, instructions: $instructions) {
-    _id
-    recipes {
-    name
-    herbs
-    instructions
-    }
-    }
-    }
-    `;
+
 

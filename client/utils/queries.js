@@ -12,21 +12,17 @@ remedies
 }
 }
 `;
-export const QUERY_ME = gql`
-query Me {
-me {
-_id
-email
-savedSearches {
-_id
-query
-results {
-_id
-name
-}
-}
-}
-}
+export const GET_ME = gql`
+  query GetMe {
+    me {
+      savedHerbs {
+        name
+        description
+        use
+        image
+      }
+    }
+  }
 `;
 export const GET_USER_RECIPES = gql`
 query Me {
