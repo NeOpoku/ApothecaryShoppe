@@ -14,7 +14,7 @@ export default function HerbSearch() {
 
         const key = searchTerm.trim().toLowerCase();
         if (!key) {
-            setError('What aiment would you like help with?');
+            setError('What ailment would you like help with?');
             return;
         }
 
