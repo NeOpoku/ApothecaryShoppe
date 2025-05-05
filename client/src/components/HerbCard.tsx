@@ -1,8 +1,8 @@
 // src/components/Apothecary/HerbCard.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Herb } from '../../types/Herb';
-import { useApothecary } from '../../contexts/ApothecaryContext';
+import { Herb } from '../types';
+import { useApothecary } from '../components/ApothecaryContext';
 
 interface HerbCardProps {
   herb: Herb;

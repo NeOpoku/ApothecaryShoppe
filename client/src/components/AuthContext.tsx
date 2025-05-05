@@ -1,6 +1,6 @@
 // src/contexts/AuthContext.tsx
 import React, { createContext, useReducer, useContext, useEffect } from 'react';
-import { User, AuthState } from '../types/User';
+import { User, AuthState } from '../types';
 
 // Define action types
 type AuthAction =
@@ -87,9 +87,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       
       // Mock user data (in a real app, this would come from your API)
       const user: User = {
-        id: '1',
-        email,
-        displayName: email.split('@')[0],
+          id: '1',
+          email,
+          displayName: ''
       };
       
       localStorage.setItem('user', JSON.stringify(user));
@@ -108,9 +108,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       
       // Mock user creation (in a real app, this would be your API registration)
       const user: User = {
-        id: Date.now().toString(),
-        email,
-        displayName,
+          id: Date.now().toString(),
+          email,
+          displayName: ''
       };
       
       localStorage.setItem('user', JSON.stringify(user));
