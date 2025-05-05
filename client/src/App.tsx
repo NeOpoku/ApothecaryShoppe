@@ -12,7 +12,7 @@ import MyApothecary from './pages/MyApothecary';
 import Header from './pages/Header';
 import Footer from './pages/Footer';
 
-import './App.css';
+import './index.css';
 
 // ✅ Protected Route wrapper
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {

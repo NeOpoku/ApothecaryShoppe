@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
-import { SAVE_HERB } from '../utils/mutations';
+import { SAVE_HERB } from '../../utils/mutations';
 
 interface Herb {
   name: string;
