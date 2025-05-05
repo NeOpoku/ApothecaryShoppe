@@ -5,59 +5,40 @@ import { AuthProvider, useAuth } from './components/AuthContext';
 import { ApothecaryProvider } from './components/ApothecaryContext';
 import { SearchProvider } from './components/SearchContext';
 
-// Layout Components
+import Welcome from './pages/Welcome';
+import Login from './pages/Login';
+import SignUp from './pages/Signup';
+import MyApothecary from './pages/MyApothecary';
 import Header from './pages/Header';
 import Footer from './pages/Footer';
 
-// Auth Components
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import './App.css';
 
-// Home Components
-import Welcome from './components/Welcome';
-
-// Apothecary Components
-import MyApothecary from './pages/Myapothecary';
-
-// Search Components
-import HerbDetail from './components/Search/HerbDetail';
-
-
-// Protected Route Component
+// ✅ Protected Route wrapper
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { state } = useAuth();
-  
-  if (!state.isAuthenticated) {
-    return <Navigate to="/login" />;
-  }
-  
-  return <>{children}</>;
+  return state.isAuthenticated ? <>{children}</> : <Navigate to="/login" />;
 };
 
+// ✅ Main AppContent
 const AppContent: React.FC = () => {
   return (
     <Router>
       <Header />
       <main className="main-content">
         <Routes>
-          {/* Public Routes */}
           <Route path="/" element={<Welcome />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/herbs/:id" element={<HerbDetail />} />
-          
-          {/* Protected Routes */}
-          <Route 
-            path="/my-apothecary" 
+          <Route
+            path="/my-apothecary"
             element={
               <ProtectedRoute>
                 <MyApothecary />
               </ProtectedRoute>
-            } 
+            }
           />
-          
-          {/* 404 Route */}
-          <Route path="*" element={<Navigate to="/" />} />
+          {/* You can define more routes like /about or /search later */}
         </Routes>
       </main>
       <Footer />
@@ -65,6 +46,7 @@ const AppContent: React.FC = () => {
   );
 };
 
+// ✅ Main App with Context Providers
 const App: React.FC = () => {
   return (
     <AuthProvider>
@@ -78,3 +60,6 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+
+

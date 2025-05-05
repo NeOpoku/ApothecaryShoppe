@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import Home from "./Home";
-//import HerbSearch from "./HerbSearch";
-//import Remedies from "./SearchRemedies";
-//import Recipes from "./Recipes";
-//import myApothecary from "./MyApothecary"
-//import Footer from "./Footer";
+import Home from "./Home";
+import HerbSearch from "./HerbSearch";
+import myApothecary from "./MyApothecary"
+import Footer from "./Footer";
 
 const Header = () => {
    
@@ -22,26 +20,6 @@ const Header = () => {
             </Link>
           </li>
 
-          <li>
-            <Link
-              to="/HerbSearch"
-            >
-              Herbs
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="/RemedySearch"
-            >
-              Remedies
-            </Link>
-          </li>
-          <li>
-            <Link to="/RecipesSearch">
-              Recipes
-            </Link>
-          </li>
           <li>
             <Link to="/MyApothecary">
               My Apothecary

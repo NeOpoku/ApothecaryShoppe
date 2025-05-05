@@ -14,7 +14,7 @@ export default function HerbSearch() {
 
         const key = searchTerm.trim().toLowerCase();
         if (!key) {
-            setError('What herb would you like to search for?');
+            setError('What ailment would you like help with?');
             return;
         }
 
@@ -25,7 +25,7 @@ export default function HerbSearch() {
 
         try {
             const response = await puter.ai.chat({
-                prompt: `Provide information about the herb: ${key}`,
+                prompt: `Provide information about herbs that are good for : ${key}`,
                 model: 'gpt-4',
             });
 
@@ -36,7 +36,7 @@ export default function HerbSearch() {
                 setResults(response.herbs);
             }
         } catch (err) {
-            setError('Could not load herbs. Try again later.');
+            setError('Could not load information. Try again later.');
         }
     };
 
