@@ -1,18 +1,20 @@
-import decode from 'jwt-decode';
+import { decode } from "jsonwebtoken";
+
 
 class AuthService {
 getProfile() {
-return decode(this.getToken());
+const token = this.getToken();
+return token ? decode(token) || null : null;
 }
+    // Removed duplicate getToken method
 
 loggedIn() {
 const token = this.getToken();
 return !!token && !this.isTokenExpired(token);
 }
-
-isTokenExpired(token) {
-const decoded = decode(token);
-return decoded.exp < Date.now() / 1000;
+isTokenExpired(token: string) {
+const decoded: any = decode(token);
+return decoded && decoded.exp < Date.now() / 1000;
 }
 
 getToken() {
@@ -31,3 +33,5 @@ window.location.assign('/');
 }
 
 export default new AuthService();
+
+
