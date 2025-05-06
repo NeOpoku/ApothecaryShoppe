@@ -52,4 +52,3 @@ const MyApothecary: React.FC = () => {
 };
 
 export default MyApothecary;
- <p><strong>Benefits:</strong> {herb.benefits?.join(', ')}</p>
