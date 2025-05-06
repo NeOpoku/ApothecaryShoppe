@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import Herb from '../models/Herb';
+import Herb from '../Models/herb';
 
 const router = Router();
 
