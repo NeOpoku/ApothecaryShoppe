@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import SearchResult from './SearchResult';
+import SearchResult from '../components/SearchResult';
 import React from 'react';
 
 export default function Welcome() {

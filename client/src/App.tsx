@@ -9,9 +9,10 @@ import Welcome from './pages/Welcome';
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
 import MyApothecary from './pages/MyApothecary';
-import Header from './pages/Header';
-import Footer from './pages/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 // ✅ Protected Route wrapper

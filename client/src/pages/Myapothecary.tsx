@@ -64,7 +64,7 @@ if (error) return <p>Error loading saved searches: {error.message}</p>;
 
 
 if (loading) return <p>Loading your Apothecary...</p>;
-if (error) return <p>Error loading saved searches: {error.message}</p>; // Accessing message safely
+if (error) return <p>Error loading saved searches: {(error as any).message}</p>; // Accessing message safely
 const herbs = apothecaryState.savedHerbs || [];
 return (
   <div>
