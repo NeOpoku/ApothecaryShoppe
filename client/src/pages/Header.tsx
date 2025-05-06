@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Home from "./Home";
-import HerbSearch from "./HerbSearch";
-import myApothecary from "./MyApothecary"
-import Footer from "./Footer";
+
+
 
 const Header = () => {
    
@@ -11,15 +9,17 @@ const Header = () => {
     <header className="header">
       <h1 className="header-text">The Apothecary Shoppe</h1>
       <nav className="navbar">
+        
         <ul>
           <li>
+      
             <Link
-              to="/"
+              to="/Home"
             >
               Home
             </Link>
-          </li>
 
+          </li>
           <li>
             <Link to="/MyApothecary">
               My Apothecary
@@ -32,3 +32,8 @@ const Header = () => {
   );
 }
 export default Header;
+
+
+
+
+      
