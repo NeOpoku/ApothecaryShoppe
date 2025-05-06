@@ -1,10 +1,9 @@
 import React from 'react';
-import './index.css';
 
 
 const Login = () => {
   return (
-    <div className="login-page" style={{ backgroundImage: `url(${bg})` }}>
+    <div className="login-page">
       <div className="glass-box p-4 rounded shadow-lg text-center">
         <img src="../assets/images/1.png" alt="Apothecary Logo" className="logo mb-2" />
 
