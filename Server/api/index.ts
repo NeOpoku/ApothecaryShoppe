@@ -7,7 +7,7 @@ const router = express.Router();
 app.use(express.json());
 
 // Route
-router.get('/status', (req: express.Request, res: express.Response) => {
+router.get('/status', (_req: express.Request, res: express.Response) => {
   res.send('API is running');
 });
 
