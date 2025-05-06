@@ -1,31 +1,14 @@
-import {
-  ApolloClient,
-  InMemoryCache,
-  createHttpLink,
-  ApolloProvider as Provider,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-import React from "react";
-
-const httpLink = createHttpLink({
-  uri: "/graphql",
-});
-
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("id_token");
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : "",
-    },
-  };
-});
+// client/src/utils/ApolloProvider.tsx
+import React from 'react';
+import { ApolloClient, InMemoryCache, ApolloProvider as Provider } from '@apollo/client';
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  uri: 'http://localhost:4000/graphql', // Replace with your GraphQL endpoint
   cache: new InMemoryCache(),
 });
 
-export default function ApolloProvider({ children }) {
+const ApolloProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <Provider client={client}>{children}</Provider>;
-}
+};
+
+export default ApolloProvider;
