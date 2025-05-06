@@ -5,6 +5,7 @@ import {
   ApolloProvider as Provider,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import React from "react";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
