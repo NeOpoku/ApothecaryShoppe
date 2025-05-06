@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import SearchResult from './SearchResult';
+import React from 'react';
 
 export default function Welcome() {
   const [query, setQuery] = useState('');
@@ -29,12 +30,24 @@ export default function Welcome() {
 
   return (
     <div className="welcome-container">
-      {/* ... same as before ... */}
+    <div>
+      <h1 className="welcome">Welcome to your Apothecary</h1>
+      <img src="/apothecary.svg" alt="My Apothecary Logo" className="logHead" />
+    </div>
 
-      <div className="search-container">
-        <form onSubmit={handleSearch}>
-          <input
-            type="text"
+    <div>
+      <p className="textWelcome">
+        Welcome to My Apothecary, your personal gateway to the healing power of herbs.
+        Discover trusted herbal information for your needs and save
+        your own history of natural solutions all in one beautiful, easy-to-use place.
+      </p>
+    </div>
+
+    <div className="search-container">
+      <form onSubmit={handleSearch}>
+        <input
+          type="text"
+
             placeholder="Feeling off? Tell us what's wrong..."
             onChange={(e) => setQuery(e.target.value)}
           />

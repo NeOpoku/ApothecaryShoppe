@@ -1,11 +1,32 @@
 // src/components/Apothecary/MyApothecary.tsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/AuthContext';
-import HerbCard from '../components/HerbCard'; // Adjusted the path to match the correct location
+
 
 const MyApothecary: React.FC = () => {
   const { state: authState } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null); // Explicitly typed as Error | null
+  
+  useEffect(() => {
+    // Simulate data fetching
+    const fetchData = async () => {
+      setLoading(true);
+      // Simulate a delay for loading
+      try {
+        // Simulate successful data fetching
+        setLoading(false);
+      } catch (err) {
+        setError(err as Error);
+        setLoading(false);
+      }
+      setLoading(false);
+    };
+  
+    fetchData();
+  }, []);
+  
   const apothecaryState = {
     savedHerbs: [
       {
@@ -36,15 +57,15 @@ const MyApothecary: React.FC = () => {
       navigate('/login');
     }
   }, [authState.isAuthenticated, navigate]);
-
+if (error) return <p>Error loading saved searches: {error.message}</p>;
   if (!authState.isAuthenticated) {
     return null; // Don't render anything while redirecting
   }
 
 
 if (loading) return <p>Loading your Apothecary...</p>;
-if (error) return <p>Error loading saved searches: {error.message}</p>;
-const herbs = data?.me?.savedHerbs || [];
+if (error) return <p>Error loading saved searches: {error.message}</p>; // Accessing message safely
+const herbs = apothecaryState.savedHerbs || [];
 return (
   <div>
 	<div className="apothecary-container">
@@ -69,27 +90,6 @@ return (
     </div>
   );
 };
-export default MyApothecary;
-  return (
-    <div className="apothecary-container">
-      <h1 className="apothecary-title">My Apothecary</h1>
-
-      <div className="apothecary-section">
-        <h2 className="apothecary-section-title">My Herbs</h2>
-        {apothecaryState.savedHerbs.length === 0 ? (
-          <p className="apothecary-empty">
-            You haven't saved any herbs yet. Search for herbs to add them to your collection.
-          </p>
-        ) : (
-          <div className="apothecary-grid">
-            {apothecaryState.savedHerbs.map((herb) => (
-              <HerbCard key={herb.id} herb={herb} />
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
+  // Removed duplicate apothecaryState and redundant return statement
 
 export default MyApothecary;

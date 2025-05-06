@@ -1,421 +1,180 @@
-/* Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
-
-:root {
-  --primary-color: #6b7a47;
-  --secondary-color: #8b9e60;
-  --light-color: #f2efe4;
-  --dark-color: #3c4023;
-  --accent-color: #c1b178;
-  --text-light: #f9f6ec;
-  --text-dark: #333;
-  --border-radius: 10px;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-}
-
-* {
+/* === GLOBAL RESET & FONT === */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+  background-color: #f3f1e7;
+  color: #2c2c2c;
 }
 
-body {
-  font-family: 'Cormorant Garamond', serif;
-  background-color: var(--light-color);
-  color: var(--text-dark);
-  line-height: 1.6;
+/* === NAVBAR === */
+.navbar {
+  background-color: #6c7545 !important;
 }
 
-a {
-  text-decoration: none;
-  color: var(--dark-color);
-}
-
-button {
-  cursor: pointer;
-  font-family: 'Cormorant Garamond', serif;
-  transition: var(--transition);
-}
-
-input {
-  font-family: 'Cormorant Garamond', serif;
-}
-
-/* Layout */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.main-content {
-  min-height: calc(100vh - 100px);
-  padding: 20px 0;
-}
-
-/* Header */
-.header {
-  background-color: var(--primary-color);
-  padding: 15px 0;
-  box-shadow: var(--shadow);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--text-light);
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.logo img {
-  width: 40px;
-  height: 40px;
-}
-
-/* Navigation */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
+.navbar-brand {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
 }
 
 .nav-link {
-  color: var(--text-light);
-  font-size: 18px;
-  transition: var(--transition);
+  color: white !important;
+  font-size: 1.1rem;
+  margin-left: 1rem;
 }
 
 .nav-link:hover {
-  color: var(--accent-color);
+  text-decoration: underline;
 }
 
-/* Authentication Pages */
-.auth-container {
-  display: flex;
-  background-image: url('./assets/images/Background.svg');
+/* === HERO SECTION === */
+header {
+  padding: 4rem 2rem;
+  background-color: #f9f7f0;
+  background-image: url("../src/assets/images/Firstpage.svg");
   background-size: cover;
-  min-height: 100vh;
-}
-
-.auth-card {
-  background-color: rgba(242, 239, 228, 0.95);
-  border-radius: var(--border-radius);
-  padding: 30px;
+  background-position: center;
+  text-align: center;
   width: 100%;
-  max-width: 450px;
-  margin: auto;
-  box-shadow: var(--shadow);
-  text-align: center;
+  height: 100vh;
 }
 
-.auth-logo {
-  margin-bottom: 30px;
-}
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.auth-form-group {
-  text-align: left;
-}
-
-.auth-input {
-  width: 100%;
-  padding: 12px 15px;
-  border: 2px solid var(--primary-color);
-  border-radius: 25px;
-  background-color: white;
-  font-size: 16px;
-}
-
-.auth-button {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  padding: 12px 25px;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.auth-button:hover {
-  background-color: var(--secondary-color);
-}
-
-.auth-link {
-  color: var(--primary-color);
+header h1 {
+  font-size: 2.5rem;
   font-weight: 600;
 }
 
-/* Welcome Page */
-.welcome-container {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.welcome-title {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.welcome-desc {
-  font-size: 20px;
-  max-width: 800px;
-  margin: 0 auto 40px;
-}
-
-/* Search Bar */
-.search-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 30px;
-  padding: 5px;
-  border: 2px solid var(--primary-color);
-}
-
-.search-icon {
-  margin-left: 10px;
-  color: var(--primary-color);
-}
-
-.search-input {
-  flex: 1;
-  border: none;
-  padding: 12px 15px;
-  font-size: 18px;
-  outline: none;
-  background: transparent;
-}
-
-.search-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.search-button:hover {
-  background-color: var(--secondary-color);
-}
-
-/* My Apothecary */
-.apothecary-container {
-  padding: 40px 20px;
-}
-
-.apothecary-title {
-  font-size: 36px;
-  color: var(--primary-color);
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.apothecary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.apothecary-card {
-  background-color: white;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  height: 100%;
-}
-
-.apothecary-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.apothecary-card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.apothecary-card-content {
-  padding: 20px;
-}
-
-.apothecary-card-title {
-  font-size: 24px;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.apothecary-card-desc {
-  color: var(--text-dark);
-  margin-bottom: 15px;
-}
-
-.apothecary-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.apothecary-card-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 15px;
-  font-size: 14px;
-}
-
-.apothecary-card-button:hover {
-  background-color: var(--secondary-color);
-}
-
-/* Herb Detail */
-.herb-detail-container {
-  background-color: white;
-  border-radius: var(--border-radius);
-  padding: 30px;
-  box-shadow: var(--shadow);
-  margin-bottom: 30px;
-}
-
-.herb-detail-header {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-.herb-detail-img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: var(--border-radius);
-}
-
-.herb-detail-info {
-  flex: 1;
-}
-
-.herb-detail-title {
-  font-size: 32px;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-}
-
-.herb-detail-scientific {
-  font-style: italic;
-  color: var(--secondary-color);
-  margin-bottom: 20px;
-}
-
-.herb-detail-desc {
-  margin-bottom: 20px;
-}
-
-.herb-detail-uses-title {
-  font-size: 20px;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.herb-detail-uses-list {
-  list-style-position: inside;
-  margin-bottom: 20px;
-}
-
-.save-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.save-button:hover {
-  background-color: var(--secondary-color);
-}
-
-/* Search Results */
-.search-results-container {
-  padding: 40px 20px;
-}
-
-.search-results-title {
-  font-size: 28px;
-  color: var(--primary-color);
-  margin-bottom: 30px;
-}
-
-.search-results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-/* Disclaimer */
-.disclaimer {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  padding: 15px;
-  text-align: center;
-  font-size: 14px;
-  margin-top: 40px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .herb-detail-header {
-    flex-direction: column;
-  }
+header p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #f9f7f0;
   
-  .herb-detail-img {
-    width: 100%;
-    max-height: 250px;
-  }
-
-  .welcome-title {
-    font-size: 36px;
-  }
-
-  .welcome-desc {
-    font-size: 18px;
-  }
 }
 
-@media (max-width: 480px) {
-  .auth-card {
-    padding: 20px;
-  }
+header input[type="text"] {
+  width: 300px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem 0 0 0.375rem;
+  font-size: 1rem;
+}
 
-  .apothecary-grid {
-    grid-template-columns: 1fr;
-  }
+header button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #6c7545;
+  color: white;
+  border-radius: 0 0.375rem 0.375rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: #596336;
+}
+
+/* === FEATURED SECTIONS === */
+main {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+main h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+main p {
+  font-size: 1.05rem;
+  color: #4b4b4b;
+}
+
+main img {
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
+/* === FOOTER (Optional) === */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #e8e5d7;
+  font-size: 0.95rem;
+  color: #555;
+}
+body {
+  background-color: #f3f1e7;
+  font-family: 'Georgia', serif;
+  color: #2c2c2c;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #6c7545;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav-links {
+  margin-top: 1rem;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.search-section {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.search-section input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  width: 250px;
+  font-size: 1rem;
+}
+
+.search-section button {
+  padding: 0.6rem 1.2rem;
+  background-color: #6c7545;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.features {
+  max-width: 900px;
+  margin: 3rem auto;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.feature img {
+  width: 80px;
+  margin-right: 1.5rem;
 }

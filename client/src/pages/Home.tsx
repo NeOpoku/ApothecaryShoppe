@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { GET_HERBS } from '../utils/queries';
-import DrawerCabinet from '../components/DrawerCabinet';
-import './Index.css'; // Assuming you have a CSS file for styling
+
 
 export default function Home() {
 const [query, setQuery] = useState('');
