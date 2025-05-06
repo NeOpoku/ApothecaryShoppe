@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 import { useAuth } from '../components/AuthContext'; // Make sure path is correct
+import logo from '../assets/images/2.png'; // Adjust the path to your logo
 
 const SignUp = () => {
   const [userFormData, setUserFormData] = useState({ 
@@ -72,7 +73,7 @@ const SignUp = () => {
         className="auth-card"
       >
         <div className="auth-logo">
-          <img src="/assets/images/icons/logo.svg" alt="The Apothecary Shoppe Logo" />
+        <img src={logo} height={200} width={200}/>
           <h1>THE APOTHECARY SHOPPE</h1>
         </div>
         

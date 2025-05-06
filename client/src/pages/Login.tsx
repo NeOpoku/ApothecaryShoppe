@@ -1,12 +1,12 @@
 import React from 'react';
+import logo from '../assets/images/2.png';
 
 
 const Login = () => {
   return (
     <div className="login-page">
       <div className="glass-box p-4 rounded shadow-lg text-center">
-        <img src="../assets/images/1.png" alt="Apothecary Logo" className="logo mb-2" />
-
+        <img src={logo} height={100} width={100}/>
         <form className="login-form">
           <div className="form-group mb-3 text-start">
             <label htmlFor="email" className="form-label">

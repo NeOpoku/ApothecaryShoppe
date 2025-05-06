@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import SearchResult from '../components/SearchResult';
 import React from 'react';
+import logo from '../assets/images/2.png';
 
 export default function Welcome() {
   const [query, setQuery] = useState('');
@@ -32,7 +33,7 @@ export default function Welcome() {
     <div className="welcome-container">
     <div>
       <h1 className="welcome">Welcome to your Apothecary</h1>
-      <img src="/apothecary.svg" alt="My Apothecary Logo" className="logHead" />
+      <img src={logo} height={200} width={200}/>
     </div>
 
     <div>
