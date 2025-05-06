@@ -11,6 +11,7 @@ import SignUp from './pages/Signup';
 import MyApothecary from './pages/MyApothecary';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -27,8 +28,10 @@ const AppContent: React.FC = () => {
     <Router>
       <Header />
       <main className="main-content">
+      
         <Routes>
           <Route path="/" element={<Welcome />} />
+    
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route
@@ -39,6 +42,7 @@ const AppContent: React.FC = () => {
               </ProtectedRoute>
             }
           />
+          {/* Add more routes here */}
           {/* You can define more routes like /about or /search later */}
         </Routes>
       </main>

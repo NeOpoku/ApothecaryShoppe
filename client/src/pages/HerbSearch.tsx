@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function HerbSearch() {
     const [searchTerm, setSearchTerm] = useState('');
-    const [results, setResults] = useState([]);
+    const [results, setResults] = useState<{ name: string }[]>([]);
     const [error, setError] = useState('');
 
     const cache = new Map();
@@ -24,10 +24,13 @@ export default function HerbSearch() {
         }
 
         try {
-            const response = await puter.ai.chat({
-                prompt: `Provide information about the herb: ${key}`,
-                model: 'gpt-4',
-            });
+            const response = await fetch('/api/herbs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt: `Provide information about the herb: ${key}`, model: 'gpt-4' }),
+            }).then((res) => res.json());
 
             if (!response || !response.herbs || !response.herbs.length) {
                 setError('No results found.');
