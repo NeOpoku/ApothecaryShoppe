@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/AuthContext';
-import HerbCard from '../components/HerbCard'; // Import the HerbCard component
+
 
 const MyApothecary: React.FC = () => {
   const { state: authState } = useAuth();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [error, setError] = useState<Error | null>(null); // Explicitly typed as Error | null
   
   useEffect(() => {
     // Simulate data fetching
@@ -57,14 +57,14 @@ const MyApothecary: React.FC = () => {
       navigate('/login');
     }
   }, [authState.isAuthenticated, navigate]);
-if (error) return <p>Error loading saved searches: {error?.message}</p>;
+if (error) return <p>Error loading saved searches: {error.message}</p>;
   if (!authState.isAuthenticated) {
     return null; // Don't render anything while redirecting
   }
 
 
 if (loading) return <p>Loading your Apothecary...</p>;
-if (error) return <p>Error loading saved searches: {error?.message}</p>;
+if (error) return <p>Error loading saved searches: {error.message}</p>; // Accessing message safely
 const herbs = apothecaryState.savedHerbs || [];
 return (
   <div>
