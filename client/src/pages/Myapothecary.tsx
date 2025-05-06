@@ -40,7 +40,6 @@ const MyApothecary: React.FC = () => {
               <div className="herb-details">
                 <h3>{herb.name}</h3>
                 <p><strong>Description:</strong> {herb.description}</p>
-                <img src={herb.image} alt={herb.name} className="herb-image" />
                
               </div>
             </div>
