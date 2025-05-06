@@ -79,6 +79,19 @@ header button:hover {
   background-color: #596336;
 }
 
+/* === HOME SECTION === */
+.home-section {
+  padding: 4rem 2rem;
+  background-color: #f9f7f0;
+}
+
+/* === WELCOME SECTION === */
+.welcome-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f9f7f0;
+}
+
 /* === SEARCH SECTION === */
 .search-section {
   text-align: center;
@@ -111,13 +124,7 @@ footer {
   font-size: 0.95rem;
   color: #555;
 }
-body {
-  background-color: #f3f1e7;
-  font-family: 'Georgia', serif;
-  color: #2c2c2c;
-  margin: 0;
-  padding: 0;
-}
+
 
 
 

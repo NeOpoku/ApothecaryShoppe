@@ -22,11 +22,7 @@ const Login = () => {
             <input type="password" className="form-control" id="password" />
           </div>
 
-          <div className="text-end mb-3">
-            <a href="#" className="small text-muted">
-              Forgot Password?
-            </a>
-          </div>
+        
 
           <button type="submit" className="btn btn-olive w-100">
             Login
