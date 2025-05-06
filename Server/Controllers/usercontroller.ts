@@ -11,4 +11,4 @@ export const getUser = (req: Request, res: Response) => {
       var userId = req.params.id;
       res.send("User ID requested: ".concat(userId));
   };
-  exports.getUser = getUser;
+  exports.getUser = getUser;}
