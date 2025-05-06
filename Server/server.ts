@@ -1,15 +1,15 @@
-import express from 'express';
+
 import { ApolloServer } from 'apollo-server-express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-
+import express, { Application } from 'express';
 import { typeDefs, resolvers } from './Schemas'; // Adjusted path to match the correct location
-import { authMiddleware } from './services/auth'; // Adjusted path to match the correct location
+import { authMiddleware } from './Services/auth'; // Adjusted path to match the correct location
 
 dotenv.config();
 
-const app = express();
+const app: Application = express();
 const PORT = process.env.PORT || 4000;
 
 // Middleware
